@@ -1,0 +1,42 @@
+* {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+html {
+  background-color: ivory;
+  font-size: 16px;
+}
+body {
+  width: 640px;
+  margin: auto; /* 너비에서 남는 여백을 동일하게 분배 */
+}
+
+h1 {
+  font-size: 40px;
+  color: rgb(176, 129, 66);
+}
+h2 {
+  font-size: 30px;
+  color: rgb(176, 129, 66);
+}
+img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+p {
+  font-size: 1.2rem;
+}
+span {
+  color: rgb(107, 103, 100);
+}
+s {
+  opacity: 0.2;
+}
+
+#introduce {
+  color: rgb(95, 70, 37);
+}
+#funfacts {
+  color: rgb(95, 70, 37);
+}
