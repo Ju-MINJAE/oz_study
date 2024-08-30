@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>설문조사</title>
+  </head>
+  <body style="text-align: center">
+    <header>
+      <h1>설문조사 양식</h1>
+      <p>모든 항목에 빠짐없이 체크해주세요.</p>
+    </header>
+    <hr />
+    <main>
+      <form action="">
+        <fieldset>
+          <legend>개인정보</legend>
+          <label for="name">이름 :</label>
+          <input type="text" name="name" placeholder="본명을 입력하세요." />
+          <br /><br />
+          <label for="email">이메일주소 :</label>
+          <input type="email" name="email" placeholder="example@test.com" />
+        </fieldset>
+        <fieldset>
+          <legend>설문</legend>
+          <p>연령대가 어떻게 되십니까 ?</p>
+          <input type="radio" id="teen" name="age" />
+          <label for="teen">10대</label>
+          <input type="radio" id="twenty" name="age" />
+          <label for="twenty">20대</label>
+          <input type="radio" id="thirty" name="age" />
+          <label for="thirty">30대</label>
+          <input type="radio" id="fourty" name="age" />
+          <label for="fourty">40대</label>
+          <input type="radio" id="fifty" name="age" />
+          <label for="fifty">50대</label>
+          <input type="radio" id="other" name="age" />
+          <label for="other">그 외</label>
+          <p>
+            학원을 선택할 때 가장 중요하게 생각하는 것은 무엇입니까 ? 모두
+            고르세요.
+          </p>
+          <input type="checkbox" id="location" name="academy" />
+          <label for="location">위치</label>
+          <input type="checkbox" id="price" name="academy" />
+          <label for="price">학원비</label>
+          <input type="checkbox" id="teacher" name="academy" />
+          <label for="teacher">강사</label>
+          <input type="checkbox" id="infra" name="academy" />
+          <label for="infra">시설</label>
+          <p>학원을 선택하실 때 참고하는 정보는 무엇입니까 ? 모두 고르세요.</p>
+          <input type="checkbox" id="search" name="info" />
+          <label for="search">인터넷 검색</label>
+          <input type="checkbox" id="recommend" name="info" />
+          <label for="recommend">지인 추천</label>
+          <input type="checkbox" id="ad" name="info" />
+          <label for="ad">학원 광고</label>
+          <input type="checkbox" id="review" name="info" />
+          <label for="review">리뷰</label>
+        </fieldset>
+        <fieldset>
+          <legend>기타의견</legend>
+          <textarea cols="30" rows="10" name="comment"></textarea>
+        </fieldset>
+        <input type="submit" />
+      </form>
+    </main>
+    <hr />
+    <footer>
+      <p>입력하느라 수고하셨습니다.</p>
+    </footer>
+  </body>
+</html>
