@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter3-31</title>
+    <style>
+      /* 
+        기호와 함께 사용하는 속성 선택자
+        * : 값의 포함 여부
+        ^ : 값의 시작 여부
+        $ : 값의 끝 여부
+      */
+      [width^='1'] {
+        border: 2px solid red;
+      }
+      p > em {
+        color: blue;
+      }
+      /* 형제 선택자는 뒤 이어 등장하는 형제들을 대상으로 한다! */
+      #sam ~ p {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="../3회차/images/mycat1.jpeg" width="120" alt="고양이" />
+    <img src="../3회차/images/mycat1.jpeg" width="120" />
+    <img src="../3회차/images/mycat1.jpeg" width="120" id="sam" />
+    <p>고양이는 귀엽다.고양이는 귀엽다.고양이는 귀엽다.고양이는 귀엽다.</p>
+    <p>고양이는 최고다.고양이는 최고다.고양이는 최고다.고양이는 최고다.</p>
+    <p>
+      고양이는 필수다.고양이는 필수다.<em>고양이는 필수다.</em>고양이는 필수다.
+    </p>
+    <p>
+      고양이는 찬양하라.고양이는 찬양하라.고양이는 찬양하라.고양이는 찬양하라.
+    </p>
+  </body>
+</html>

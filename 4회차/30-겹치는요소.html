@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter3-30</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        position: relative;
+      }
+      .div1 {
+        background-color: red;
+        z-index: 4;
+        overflow: auto;
+      }
+      .div2 {
+        background-color: orange;
+        bottom: 50px;
+        z-index: 3;
+      }
+      .div3 {
+        background-color: yellow;
+        bottom: 100px;
+        z-index: 2;
+      }
+      .div4 {
+        background-color: green;
+        bottom: 150px;
+        z-index: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="div1">
+      redredredredredredredredredredredredredredred
+      redredredredredredredredredredredredredredred
+      redredredredredredredredredredredredredredred
+      redredredredredredredredredredredredredredred
+    </div>
+    <div class="div2">2</div>
+    <div class="div3">3</div>
+    <div class="div4">4</div>
+  </body>
+</html>
