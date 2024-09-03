@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>회원가입</title>
+    <link rel="stylesheet" href="signup.css" />
+  </head>
+  <body>
+    <div class="logo">
+      <h2>OZ코딩스쿨</h2>
+    </div>
+    <div class="signup">
+      <h1>회원가입</h1>
+      <p><strong>OZ코딩스쿨에 오신 것을 환영합니다! 😄</strong></p>
+      <main>
+        <form>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="이름"
+            required
+          />
+          <br />
+          <input
+            type="number"
+            id="phone"
+            name="phone"
+            placeholder="전화번호"
+            required
+          />
+          <br />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="이메일"
+            required
+          />
+          <br />
+          <input
+            type="password"
+            id="pw"
+            name="pw"
+            placeholder="비밀번호"
+            required
+          />
+          <input type="date" id="date" name="date" />
+          <br />
+          <div class="radio-container">
+            <div>
+              <input type="radio" id="male" name="gender" value="male" />
+              <label for="male">남자</label>
+            </div>
+            <div>
+              <input type="radio" id="female" name="gender" value="female" />
+              <label for="female">여자</label>
+            </div>
+            <div>
+              <input type="radio" id="etc" name="gender" value="etc" />
+              <label for="etc">해당없음</label>
+            </div>
+          </div>
+          <hr />
+          <footer>
+            <p><strong>아래 약관에 동의해주세요.</strong></p>
+            <br />
+            <div class="agree_container">
+              <input type="checkbox" id="agree1" name="agree1" required />
+              <label for="agree1"
+                >남과 비교하지 않기: 남과 나를 비교하지 않고 어제의 나와 오늘의
+                나 를 비교하여 얼마나 성장했는지 가늠해요</label
+              >
+            </div>
+            <div class="agree_container">
+              <input type="checkbox" id="agree2" name="agree2" required />
+              <label for="agree2"
+                >시간을 투자하기: 시간을 투자하고 노력할수록 완성도 있고 성취감
+                있는 결과를 만들어낼 수 있어요</label
+              >
+            </div>
+            <div class="agree_container">
+              <input type="checkbox" id="agree3" name="agree3" required />
+              <label for="agree3"
+                >함께할 동료를 만들기: 서로서로 가르쳐주고 배우기도 하며 함께할
+                동료를 만들어보세요.</label
+              >
+            </div>
+            <div class="agree_container">
+              <input type="checkbox" id="agree4" name="agree4" required />
+              <label for="agree4"
+                >자원을 적극 활용하기: 희 운영진은 여러분을 위해 상시
+                대기중..!</label
+              >
+            </div>
+          </footer>
+          <input type="submit" value="회원가입하기" /><br />
+        </form>
+        <br />
+        <div class="atag">
+          <a
+            href="https://www.googleadservices.com/pagead/aclk?..."
+            target="_blank"
+            >오즈코딩스쿨 홈페이지 구경하기 >
+          </a>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

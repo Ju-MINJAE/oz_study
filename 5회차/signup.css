@@ -1,0 +1,127 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+html {
+  background-color: black;
+  font-size: 16px;
+}
+body {
+  text-align: center;
+}
+div.logo {
+  float: left;
+  padding-left: 80px;
+}
+div.logo {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  width: 400px;
+}
+div.logo > h2 {
+  color: white;
+  font-size: 60px;
+  text-align: center;
+}
+div.signup {
+  width: 400px;
+  float: right;
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 10px;
+}
+
+form > input {
+  width: 80%;
+}
+input {
+  padding: 10px 5px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: 1px solid lightgray;
+}
+.radio-container {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 15px;
+}
+.radio-container div {
+  display: flex;
+  align-items: center;
+}
+.radio-container label {
+  margin-left: 5px;
+}
+
+input[type='checkbox'] {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+}
+.agree_container {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+input[type='submit'] {
+  width: 80%;
+  margin: 0px 50px;
+  cursor: pointer;
+  background-color: purple;
+  color: white;
+  border: none;
+}
+
+footer {
+  text-align: left;
+}
+
+footer p {
+  text-align: center;
+}
+
+footer div {
+  text-align: left;
+  margin-left: 0;
+}
+
+footer label {
+  margin-left: 5px;
+}
+
+footer input[type='checkbox'] {
+  margin-right: 5px;
+}
+.atag {
+  text-align: center;
+}
+a {
+  text-decoration: none;
+}
+
+@media screen and (max-width: 980px) {
+  div.logo {
+    width: 100%;
+    height: auto;
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  div.logo > h2 {
+    color: black;
+    font-size: 40px;
+  }
+
+  div.signup {
+    background-color: white;
+    width: 80%;
+    height: 80%;
+    margin: 0 auto;
+    float: none;
+    display: block;
+  }
+}
