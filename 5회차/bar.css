@@ -1,0 +1,46 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+
+nav.nav {
+  width: 100%;
+  background-color: gray;
+  color: white;
+  font-size: 22px;
+}
+
+nav.nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 20px;
+}
+li:hover {
+  color: red;
+}
+.menu-toggle,
+.toggle {
+  display: none;
+}
+@media screen and (max-width: 600px) {
+  nav.nav {
+    display: none;
+  }
+  nav.nav ul {
+    flex-direction: column;
+  }
+  .menu-toggle,
+  .toggle {
+    display: inline;
+  }
+  .menu-toggle:checked ~ .nav {
+    display: block;
+  }
+}
