@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>우리 동네에서 찾는 오즈알바</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        font-size: 16px;
+      }
+      body {
+        margin: 0;
+      }
+      button:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        transition: 0.3s all ease;
+      }
+      .flex {
+        display: flex;
+      }
+      .main {
+        padding: 4rem 0 5rem;
+      }
+    </style>
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="info.css" />
+    <link rel="stylesheet" href="notice.css" />
+    <link rel="stylesheet" href="banner.css" />
+    <link rel="stylesheet" href="footer.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="header-content flex">
+          <div class="header-content__logo">더덕마켓</div>
+          <nav class="header-content__nav flex">
+            <ul>
+              <li>중고거래</li>
+              <li>동네가게</li>
+              <li class="active">알바</li>
+              <li>부동산 직거래</li>
+              <li>중고차 직거래</li>
+            </ul>
+          </nav>
+          <div class="header-content__input flex">
+            <span class="icon glass">
+              <input type="button" value='&#128269'/>
+            </span>
+            <span>
+              <input type="text" placeholder='물품이나 동네를 검색해보세요.' class='search'/>
+            </span>
+            <span class="icon menu">
+              <input type="button"  value='&#9776'/>
+            </span>
+            <span>
+              <input type="button" class='chat' value='채팅하기'/>
+            </span>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+        <section class="info">
+          <div class="info__text">
+            <h1>당신의 열정을 찾을<br> 완벽한 아르바이트</h1>
+            <p>가까운 거리에서, 최고의 기회를 만나보세요.</p>
+          </div>
+        </section>
+
+        <section class="notice">
+          <h2 class="notice__title">인기 더덕알바</h2>
+          <div class="notice__container flex">
+            <article class="notice__item flex">
+              <img src="./DD.jpg" alt="DD" class="notice__thumb">
+              <div class="notice__content">
+                <div class="notice__content__title">더덕마켓 고객센터 단기계약직 모집(1달 계약직)</div>
+                <div class="notice__content__address">주식회사 더덕서비스 - 경기도 고양시 일산서구</div>
+                <div class="notice__content__pay">월급 3,000,000원</div>
+              </div>
+            </article>
+            <article class="notice__item flex">
+              <img src="./DD.jpg" alt="DD" class="notice__thumb">
+              <div class="notice__content">
+                <div class="notice__content__title">호텔 객실청소 파트타임 일일알바 구합니다.</div>
+                <div class="notice__content__address">더덕호텔</div>
+                <div class="notice__content__pay">일급 50,000원</div>
+              </div>
+            </article>
+            <article class="notice__item flex">
+              <img src="./DD.jpg" alt="DD" class="notice__thumb">
+              <div class="notice__content">
+                <div class="notice__content__title">옷박스 옮기기 옷분류 단순알바</div>
+                <div class="notice__content__address">더덕의류창고</div>
+                <div class="notice__content__pay">시급 12,000원</div>
+              </div>
+            </article>
+            <article class="notice__item flex">
+              <img src="./DD.jpg" alt="DD" class="notice__thumb">
+              <div class="notice__content">
+                <div class="notice__content__title">오늘 오후 상차 근무자 16시-22시</div>
+                <div class="notice__content__address">더덕물류센터</div>
+                <div class="notice__content__pay">시급 15,000원</div>
+              </div>
+            </article>
+          </div>
+
+          <div class="banner flex">
+            <div class="banner__text">더덕알바 이용방법이 궁금하다면 <br>지금 바로 알아보세요!</div>
+            <button class="banner__button">이용방법 알아보기</button>
+          </div>
+
+          <div class="notice__container flex">
+            <article class="notice__item flex">
+              <img src="./DD.jpg" alt="DD" class="notice__thumb">
+              <div class="notice__content">
+                <div class="notice__content__title">반찬 잘하시는 주방 직원 및 알바 구해요</div>
+                <div class="notice__content__address">더덕반찬 - 더덕마을</div>
+                <div class="notice__content__pay">월급 3,500,000</div>
+              </div>
+            </article>
+            <article class="notice__item flex">
+              <img src="./DD.jpg" alt="DD" class="notice__thumb">
+              <div class="notice__content">
+                <div class="notice__content__title">더덕커피 평일/주말 알바구해요.</div>
+                <div class="notice__content__address">더덕커피</div>
+                <div class="notice__content__pay">시급 12,000원</div>
+              </div>
+            </article>
+            <article class="notice__item flex">
+              <img src="./DD.jpg" alt="DD" class="notice__thumb">
+              <div class="notice__content">
+                <div class="notice__content__title">더덕행사 스태프, 안전요원 구합니다.</div>
+                <div class="notice__content__address">주식회사 더덕행사 - 경기도 고양시 대화동 킨텍스</div>
+                <div class="notice__content__pay">일급 130,000원</div>
+              </div>
+            </article>
+            <article class="notice__item flex">
+              <img src="./DD.jpg" alt="DD" class="notice__thumb">
+              <div class="notice__content">
+                <div class="notice__content__title">더덕주유소 정직원 구합니다.</div>
+                <div class="notice__content__address">더덕주유소 - 경기도 고양시 일산서구 정발산동</div>
+                <div class="notice__content__pay">시급 11,000원</div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class='footer'>
+        <div class="footer__container">
+          <section class="footer__menu">
+            <div class="footer__apps">
+              <div class="footer__appdown">더덕마켓 앱 다운로드</div>
+              <div class="footer__appbtn flex">
+                <button>App Store</button>
+                <button>Google Play</button>
+              </div>
+            </div>
+
+            <nav class="footer__nav flex">
+              <ul>
+                <li>중고거래</li>
+                <li>동네가게</li>
+                <li>더덕알바</li>
+                <li>부동산 직거래</li>
+                <li>중고차 직거래</li>
+              </ul>
+              <ul><li>더덕비즈니스</li><li>채팅하기</li></ul>
+              <ul>
+                <li>자주 묻는 질문</li>
+                <li>회사 소개</li>
+                <li>인재 채용</li>
+              </ul>
+            </nav>
+          </section>
+          <section class="footer__info">
+            <div>
+              <strong>대표</strong> 주민재 | <strong>사업자번호</strong> 123-45-67890
+            </div>
+            <div>
+              <strong>직업정보제공사업 신고번호</strong> 2024-경기고양-0001
+            </div>
+            <div>
+              <strong>주소</strong> 경기도 고양시 일산서구
+            </div>
+            <div>
+              <strong>전화</strong> 010-1234-5678 | <strong>고객문의</strong> juminjae98@gamil.com
+            </div>
+            <p>
+              <strong>이용약관</strong> &nbsp; &nbsp;
+              <strong style='color: #000000;'>개인정보처리방침</strong>&nbsp; &nbsp; 
+              <strong>위치기반서비스 이용약관</strong>&nbsp; &nbsp; 
+              <strong>이용자보호 비전과 계획</strong>&nbsp; &nbsp; 
+            </p>
+          </section>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

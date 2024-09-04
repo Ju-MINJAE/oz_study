@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox Layout</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+      }
+      ul {
+        display: flex;
+        padding: 0;
+        list-style-type: none;
+        height: 200px;
+
+        /* flex-direction: row; */
+        /* flex-wrap: wrap; */
+        /* flex-flow: row wrap; */
+
+        /* justify-content: space-between; */
+        align-items: center;
+      }
+      /* li:nth-child(3) {
+        align-self: flex-start;
+      } */
+      li {
+        background-color: tomato;
+      }
+      li:nth-child(2n) {
+        background-color: teal;
+      }
+      li:nth-child(2n-1) {
+        /* flex-basis: 200px; */
+        /* flex-grow: 1; */
+        /* flex-shrink: 2; */
+        flex: 1 1 120px;
+      }
+      li:nth-child(3) {
+        flex-grow: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>유노코딩이 집 앞 강가에서 목격한 동물들</h2>
+    <ul>
+      <li>물오리</li>
+      <li>범고래</li>
+      <li>이무기</li>
+      <li>유니콘</li>
+      <li>너구리</li>
+    </ul>
+  </body>
+</html>
