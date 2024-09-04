@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kia Connect Store</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        font-size: 16px;
+      }
+      body {
+        margin: 0;
+      }
+      button:hover {
+        cursor: pointer;
+        transform: scale(1.1);
+        transition: 0.3s all ease;
+      }
+      .flex {
+        display: flex;
+      }
+      .main {
+        padding: 4rem 0 5rem;
+      }
+    </style>
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="notice.css" />
+    <link rel="stylesheet" href="banner.css" />
+    <link rel="stylesheet" href="footer.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="header__inner flex">
+          <div class="header__inner__logo">
+            <strong>Kia</strong> Connect Store
+          </div>
+          <nav class="header__inner__nav flex">
+            <ul>
+              <li>디지털 사양</li>
+              <li>스토어 소개</li>
+              <li>고객지원</li>
+            </ul>
+          </nav>
+          <div class="header__btn__container flex">
+            <button>로그인/가입</button>
+            <button>나의 정보</button>
+          </div>
+        </div>
+        <div class="header__empty"></div>
+        <div class="header__main">
+          <div class="header__main__text">
+            <span>
+              신규사양 3종 출시 NBA 디스플레이 테마, 아케이드 게임, 스마트 회생
+              시스템 플러스
+            </span>
+          </div>
+          <button class="header__main__btn">자세히 보기</button>
+
+          <div class="header__main__menus flex">
+            <div class="header__menu"></div>
+            <div class="header__menu"></div>
+            <div class="header__menu"></div>
+            <div class="header__menu"></div>
+            <div class="header__menu"></div>
+          </div>
+        </div>
+      </header>
+    </div>
+
+    <main class="main">
+      <section style="margin-left: 20px; font-size: 38px; font-weight: 800">
+        당신의 일상에 딱 맞는 <br />새로운 기술과 서비스를 간편하게
+        경험해보세요.
+      </section>
+
+      <section class="notice">
+        <article class="notice__item flex">
+          <img src="./images/rspa2.png" class="notice__thumb" />
+          <div class="notice__content">
+            <div class="notice__content__title">
+              원격 스마트 주차 보조 2(RSPA 2)
+              <div class="notice__content__desc">
+                드라이빙의 끝맺음은 더욱 간편하게
+              </div>
+            </div>
+            <div class="notice__content__price">
+              평생 이용<br />₩ 500,000
+              <button class="notice__content__btn">자세히 보기</button>
+            </div>
+          </div>
+        </article>
+        <article class="notice__item flex">
+          <img src="./images/lightpattern.png" class="notice__thumb" />
+          <div class="notice__content">
+            <div class="notice__content__title">
+              라이팅 패턴
+              <div class="notice__content__desc">
+                일상을 더 다채롭게 하는 빛의 변주
+              </div>
+            </div>
+            <div class="notice__content__price">
+              평생 이용<br />₩ 180,000
+              <button class="notice__content__btn">자세히 보기</button>
+            </div>
+          </div>
+        </article>
+        <article class="notice__item flex">
+          <img src="./images/smartsysyem.png" class="notice__thumb" />
+          <div class="notice__content">
+            <div class="notice__content__title">
+              스마트 회생 시스테 플러스
+              <div class="notice__content__desc">
+                내비게이션 정보를 활용하여 더욱 스마트해진 EV 드라이빙
+              </div>
+            </div>
+            <div class="notice__content__price">
+              평생 이용<br />₩ 0
+              <button class="notice__content__btn">자세히 보기</button>
+            </div>
+          </div>
+        </article>
+      </section>
+      <section class="banner">
+        <img src="./images/banner.png" />
+        <p>새로운 기술과 탁월한 서비스<br />기아멤버스 포인트로 누려보세요</p>
+        <p>기아멤버스 포인트 최대 50% 사용</p>
+        <button>자세히 보기</button>
+      </section>
+    </main>
+
+    <footer class="footer flex">
+      <div style="width: 200px"><h2>Kia</h2></div>
+      <div style="width: 400px">
+        <p><strong>개인정보 처리방침</strong> | 이용약관</p>
+        <p>
+          사업자: 기아주식회사, 대표 송호성, 최준영 | 주소 : 서울특별시 서초구
+          현릉로 12 기아 | 사업자등록번호 : 119-81-02316
+        </p>
+        <p>&copy; Kia CORP. ALL RIGHTS RESERVED.</p>
+      </div>
+      <div>
+        <p>고객센터: 080-200-2000</p>
+        <p>오류문의:24시간 연중 무휴</p>
+        <p>일반 문의:주중 08:30 ~ 18:00 <br />(토,일,공휴일 휴무)</p>
+      </div>
+    </footer>
+  </body>
+</html>

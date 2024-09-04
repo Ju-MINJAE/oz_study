@@ -1,0 +1,30 @@
+.banner {
+  width: 100%;
+  height: 300px;
+  background-color: rgb(5, 5, 45);
+  padding: 20px;
+}
+.banner img {
+  float: right;
+  width: 400px;
+  height: 250px;
+  margin-right: 50px;
+}
+.banner p {
+  color: white;
+}
+.banner p:nth-child(1) {
+  font-size: 32px;
+  font-weight: 800;
+}
+.banner p:nth-child(2) {
+  font-size: 24px;
+  font-weight: 400;
+}
+.banner button {
+  width: 120px;
+  height: 40px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+}

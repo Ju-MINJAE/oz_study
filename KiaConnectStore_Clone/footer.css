@@ -1,0 +1,22 @@
+footer.footer {
+  width: 100%;
+  height: 300px;
+  background-color: #05141f;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer h2 {
+  color: white;
+  font-size: 40px;
+  margin: 20px;
+}
+.footer strong {
+  color: white;
+  font-size: 16px;
+}
+.footer p {
+  color: lightgray;
+  font-size: 14px;
+  margin: 20px;
+}

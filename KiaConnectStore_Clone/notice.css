@@ -1,0 +1,36 @@
+.notice__item {
+  width: 90%;
+  height: 300px;
+  margin: 40px auto;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+.notice__thumb {
+  width: 250px;
+}
+.notice__content {
+  width: 90%;
+  margin: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.notice__content__title {
+  line-height: 1.8;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.notice__content__desc {
+  line-height: 1.5;
+  font-size: 1rem;
+  color: #aeaeae;
+  font-weight: 400;
+}
+.notice__content__btn {
+  float: right;
+  width: 120px;
+  height: 40px;
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 5px;
+}
