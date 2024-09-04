@@ -44,6 +44,10 @@ section.section2 {
   justify-content: center;
   align-items: center;
 }
+.section2:hover {
+  height: 300px;
+  transition: 0.3s all ease;
+}
 section.section2 .circle_container {
   display: flex;
   gap: 50px;
@@ -83,4 +87,14 @@ section.section3 .wrapper .grid_box:nth-child(2n-1) {
   border-radius: 50%;
   background-color: #f4db4d;
   z-index: 999;
+}
+@media screen and (max-width: 900px) {
+  header.header {
+    display: inline-block;
+    text-align: center;
+  }
+  header.header .menus {
+    margin-top: 40px;
+    justify-content: space-between;
+  }
 }
