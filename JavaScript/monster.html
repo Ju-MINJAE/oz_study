@@ -4,9 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>몬스터 잡기 게임</title>
+    <style>
+      body {
+        background-color: lightgrey;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+          sans-serif;
+      }
+    </style>
   </head>
   <body>
-    <div id="container"></div>
+    <div id="container" style="text-align: center"></div>
 
     <script>
       let monsterHP = 100;
@@ -30,12 +37,13 @@
           const strong = document.createElement('strong');
           p.textContent = `몬스터를 ${attackCount}회 공격했습니다!`;
           strong.textContent = `몬스터의 남은 HP는 ${monsterHP}입니다!`;
+          strong.style.color = 'red';
           container.append(p);
           container.append(strong);
         }
         const h2 = document.createElement('h2');
         h2.textContent = `몬스터 잡기 완료! 수고하셨습니다!`;
-        h2.style.color = 'orange';
+        h2.style.color = 'blue';
         h2.title = '게임을 다시 시작하고 싶으면 새로고침하세요.';
         container.appendChild(h2);
       } else {
