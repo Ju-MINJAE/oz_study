@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>배열</title>
+  </head>
+  <body>
+    <script>
+      const newjeans = ['민지', '하니', '다니엘', '해린', '혜인'];
+      console.log(newjeans);
+
+      // newjeans[0] = '김민지';
+      // console.log(newjeans);
+
+      // for (let i = 0; i < 5; i++) {
+      //   console.log(newjeans[i]);
+      // }
+
+      // push : 배열에 주어진 요소 추가하기
+      newjeans.push('민희진');
+      console.log(newjeans);
+
+      // pop : 배열의 끝 부분부터 요소 제거하기
+      newjeans.pop();
+      console.log(newjeans);
+
+      // indexOf : 주어진 요소의 유무를 인덱스 번호로 확인
+      console.log(newjeans.indexOf('하니'));
+      console.log(newjeans.indexOf('민희진'));
+
+      // splice : 정해진 위치에서부터 정해진 개수만큼 요소 제거
+      // 지운 다음, 대체 값을 채우는 것도 가능 !
+      // newjeans.splice(0, 2, '민희진');
+      // console.log(newjeans);
+
+      // forEach : 배열의 개별 요소에 대한 함수를 차례대로 호출
+      newjeans.forEach((member) => {
+        console.log(member + '짱!');
+      });
+    </script>
+  </body>
+</html>
