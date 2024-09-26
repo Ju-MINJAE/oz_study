@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>고양이가 더 좋지만 견종 정보 페이지</title>
+    <link rel="stylesheet" href="breeds.css" />
+  </head>
+  <body>
+    <div id="container">
+      <header class="header" id="header">
+        <div class="header__search">
+          <input type="text" id="filter-text" placeholder="견종 검색" />
+          <button id="filter">필터링</button>
+        </div>
+        <div>
+          <select id="filter-select">
+            <option value="">All Dogs</option>
+          </select>
+          <button id="reset">RESET</button>
+        </div>
+      </header>
+      <main class="main" id="main"></main>
+      <div class="more" id="more">MORE</div>
+      <div class="tothetop" id="tothetop">TOP</div>
+    </div>
+
+    <script src="breeds.js"></script>
+  </body>
+</html>
