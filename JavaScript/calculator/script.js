@@ -14,6 +14,8 @@ buttons.forEach((btn) => {
     if (btn.classList.contains('number')) {
       if (curNum === '0') curNum = clickedNum;
       else curNum += clickedNum;
+
+      p.textContent = curNum;
     }
 
     if (clickedNum === '.') {
@@ -29,15 +31,23 @@ buttons.forEach((btn) => {
       return;
     }
 
-    p.textContent = curNum;
-
     if (btn.classList.contains('operator')) {
-      firstOperand = curNum;
-      console.log(`firstOperand: ${firstOperand}`);
+      if (operator && firstOperand !== null) {
+        secondOperand = curNum;
+        console.log(secondOperand);
+        const result = calculate(firstOperand, operator, secondOperand);
+        console.log(result);
+        p.textContent = result;
+        firstOperand = result;
+        curNum = '0';
+      } else {
+        firstOperand = curNum;
+        curNum = '0';
+      }
 
-      curNum = '0';
       operator = clickedNum;
-      console.log(`First Operand: ${firstOperand}, Operator: ${operator}`);
+      // console.log(`First Operand: ${firstOperand}, Operator: ${operator}`);
+      return;
     }
 
     if (clickedNum === '=') {
@@ -51,6 +61,19 @@ buttons.forEach((btn) => {
         operator = null;
         curNum = result;
       }
+      return;
+    }
+
+    if (clickedNum === '+/-' && curNum !== '0') {
+      curNum = curNum * -1;
+      p.textContent = curNum;
+      return;
+    }
+
+    if (clickedNum === '%' && curNum !== '0') {
+      curNum = String(Number(curNum) / 100);
+      p.textContent = curNum;
+      return;
     }
   });
 });
@@ -68,5 +91,7 @@ function calculate(num1, op, num2) {
       return String(num1 * num2);
     case '/':
       return String(num1 / num2);
+    default:
+      console.log('ERROR');
   }
 }
