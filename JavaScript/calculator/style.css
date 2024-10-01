@@ -49,6 +49,11 @@ body {
   display: flex;
   gap: 8px;
 }
+span {
+  position: relative;
+  left: 200px;
+  opacity: 0.5;
+}
 
 .calculator-btn {
   width: 15px;
@@ -158,4 +163,22 @@ button.number:focus {
 
 button:active {
   transform: translateY(2px);
+}
+button.delete {
+  position: relative;
+  bottom: 20px;
+  left: 275px;
+  color: #fff;
+  width: calc(25% - 10px);
+  font-size: 24px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+button.delete:active {
+  transform: translateY(2px);
+}
+
+button.delete:focus {
+  outline: none;
 }

@@ -31,7 +31,22 @@ buttons.forEach((btn) => {
       return;
     }
 
+    if (clickedNum === '←') {
+      if (curNum.length > 1) {
+        curNum = curNum.slice(0, -1);
+      } else {
+        curNum = '0';
+      }
+      p.textContent = curNum;
+      return;
+    }
+
     if (btn.classList.contains('operator')) {
+      if (operator && curNum === '0') {
+        operator = clickedNum;
+        return;
+      }
+
       if (operator && firstOperand !== null) {
         secondOperand = curNum;
         console.log(secondOperand);
@@ -81,17 +96,24 @@ buttons.forEach((btn) => {
 function calculate(num1, op, num2) {
   num1 = Number(num1);
   num2 = Number(num2);
+  let result;
 
   switch (op) {
     case '+':
-      return String(num1 + num2);
+      result = num1 + num2;
+      break;
     case '-':
-      return String(num1 - num2);
+      result = num1 - num2;
+      break;
     case 'X':
-      return String(num1 * num2);
+      result = num1 * num2;
+      break;
     case '/':
-      return String(num1 / num2);
+      result = num1 / num2;
+      break;
     default:
       console.log('ERROR');
   }
+
+  return String(parseFloat(result.toFixed(10)));
 }
