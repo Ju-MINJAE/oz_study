@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>value 속성 이해하기</title>
+  </head>
+  <body>
+    <input id="talk" />
+    <input type="button" id="push" value="push" />
+
+    <form id="form">
+      <input name="name" />
+      <input name="nick" />
+      <input type="submit" />
+    </form>
+
+    <script>
+      // const input = document.getElementById('talk');
+      // const button = document.getElementById('push');
+
+      // input.addEventListener('keyup', function (e) {
+      //   e.target.value;
+      // });
+
+      // button.addEventListener('click', function () {
+      //   const p = document.createElement('p');
+      //   p.textContent = input.value;
+      //   document.body.appendChild(p);
+      // });
+
+      const form = document.getElementById('form');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        const p = document.createElement('p');
+        p.textContent = `${e.target.name.value}의 별명은 ${e.target.nick.value}입니다.`;
+        document.body.append(p);
+      });
+    </script>
+  </body>
+</html>
