@@ -1,98 +1,89 @@
-import { useState, Component } from 'react';
+import { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [counter, setCounter] = useState(0);
-  const [inputValue, setInputValue] = useState(0);
-
-  const incrementCounter = () => {
-    setCounter(counter + 1);
-  };
-  const decrementCounter = () => {
-    setCounter(counter - 1);
-  };
-  const setCounterNumber = () => {
-    setCounter(inputValue);
-  };
+  const [todoList, setTodoList] = useState([
+    { id: 0, content: '감자 캐기' },
+    { id: 1, content: '츄르 주기' },
+    { id: 2, content: '사료 주기' },
+  ]);
 
   return (
     <>
-      <Count counter={counter} />
-      <PlusButton incrementCounter={incrementCounter} />
-      <MinusButton decrementCounter={decrementCounter} />
-      <CounterInput
-        inputValue={inputValue}
-        setInputValue={setInputValue}
-        setCounterNumber={setCounterNumber}
-      />
+      <TodoList todoList={todoList} setTodoList={setTodoList} />
+      <hr />
+      <TodoInput todoList={todoList} setTodoList={setTodoList} />
     </>
   );
 }
 
-function CounterInput({ inputValue, setInputValue, setCounterNumber }) {
+function TodoInput({ todoList, setTodoList }) {
+  const [inputValue, setInputValue] = useState('');
+
   return (
     <>
       <input
-        type="number"
         value={inputValue}
-        onChange={(e) => {
-          setInputValue(e.target.value);
-        }}
+        onChange={(evnet) => setInputValue(evnet.target.value)}
       />
-      <button onClick={setCounterNumber}>입력</button>
+      <button
+        onClick={() => {
+          const newTodo = { id: Number(new Date()), content: inputValue };
+
+          const newTodoList = [...todoList, newTodo];
+          setTodoList(newTodoList);
+          setInputValue('');
+        }}
+      >
+        추가하기
+      </button>
     </>
   );
 }
 
-function PlusButton({ incrementCounter }) {
-  return <button onClick={incrementCounter}>+</button>;
+function TodoList({ todoList, setTodoList }) {
+  return (
+    <ul>
+      {todoList.map((todo) => (
+        <Todo key={todo.id} todo={todo} setTodoList={setTodoList} />
+      ))}
+    </ul>
+  );
 }
-function MinusButton({ decrementCounter }) {
-  return <button onClick={decrementCounter}>-</button>;
+
+function Todo({ todo, setTodoList }) {
+  const [inputValue, setInputValue] = useState('');
+
+  return (
+    <li>
+      {todo.content}
+      <input
+        value={inputValue}
+        onChange={(event) => setInputValue(event.target.value)}
+      />
+      <button
+        onClick={() => {
+          setTodoList((prev) =>
+            prev.map((el) =>
+              el.id === todo.id ? { ...el, content: inputValue } : el
+            )
+          );
+          setInputValue('');
+        }}
+      >
+        수정
+      </button>
+      <button
+        onClick={() => {
+          setTodoList((prev) => {
+            return prev.filter((el) => el.id !== todo.id);
+          });
+        }}
+      >
+        삭제
+      </button>
+    </li>
+  );
 }
-
-function Count({ counter }) {
-  return <div>counter : {counter}</div>;
-}
-
-// class App extends Component {
-//   state = { counter: 0 };
-
-//   increamentCounter = () => {
-//     this.setState({ counter: this.state.counter + 1 });
-//   };
-//   decrementCounter = () => {
-//     this.setState({ counter: this.state.counter - 1 });
-//   };
-
-//   render() {
-//     return (
-//       <>
-//         <Count counter={this.state.counter} />
-//         <PlusButton increamentCounter={this.increamentCounter} />
-//         <MinusButton decrementCounter={this.decrementCounter} />
-//       </>
-//     );
-//   }
-// }
-
-// class PlusButton extends Component {
-//   render() {
-//     return <button onClick={this.props.increamentCounter}>+</button>;
-//   }
-// }
-
-// class MinusButton extends Component {
-//   render() {
-//     return <button onClick={this.props.decrementCounter}>-</button>;
-//   }
-// }
-
-// class Count extends Component {
-//   render() {
-//     console.log(this.props);
-//     return <div>counter :{this.props.counter}</div>;
-//   }
-// }
 
 export default App;
