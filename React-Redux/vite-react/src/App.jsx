@@ -10,6 +10,7 @@ function App() {
 
   return (
     <>
+      <h2>To Do List</h2>
       <TodoList todoList={todoList} setTodoList={setTodoList} />
       <hr />
       <TodoInput todoList={todoList} setTodoList={setTodoList} />
@@ -22,6 +23,7 @@ function TodoInput({ todoList, setTodoList }) {
 
   return (
     <>
+      <h2>Add To Do</h2>
       <input
         value={inputValue}
         onChange={(evnet) => setInputValue(evnet.target.value)}
@@ -53,26 +55,38 @@ function TodoList({ todoList, setTodoList }) {
 
 function Todo({ todo, setTodoList }) {
   const [inputValue, setInputValue] = useState('');
+  const [isInputShow, setIsInputShow] = useState(false);
+
+  const inputShowHandler = () => {
+    setIsInputShow(!isInputShow);
+  };
 
   return (
     <li>
+      <input type="checkbox" />
       {todo.content}
-      <input
-        value={inputValue}
-        onChange={(event) => setInputValue(event.target.value)}
-      />
-      <button
-        onClick={() => {
-          setTodoList((prev) =>
-            prev.map((el) =>
-              el.id === todo.id ? { ...el, content: inputValue } : el
-            )
-          );
-          setInputValue('');
-        }}
-      >
-        수정
-      </button>
+      {!isInputShow && <button onClick={inputShowHandler}>수정하기</button>}
+      {isInputShow && (
+        <div>
+          <input
+            value={inputValue}
+            onChange={(event) => setInputValue(event.target.value)}
+          />
+          <button
+            onClick={() => {
+              setTodoList((prev) =>
+                prev.map((el) =>
+                  el.id === todo.id ? { ...el, content: inputValue } : el
+                )
+              );
+              setInputValue('');
+              setIsInputShow(!isInputShow);
+            }}
+          >
+            수정
+          </button>
+        </div>
+      )}
       <button
         onClick={() => {
           setTodoList((prev) => {
