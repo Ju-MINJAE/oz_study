@@ -1,103 +1,47 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { Route, Routes, useNavigate } from 'react-router-dom';
+import Main from './page/Main';
+import Detail from './page/Detail';
+import Search from './page/Search';
+
 import './App.css';
 
-function App() {
-  const [todoList, setTodoList] = useState([
-    { id: 0, content: '감자 캐기' },
-    { id: 1, content: '츄르 주기' },
-    { id: 2, content: '사료 주기' },
-  ]);
-
-  return (
-    <>
-      <h2>To Do List</h2>
-      <TodoList todoList={todoList} setTodoList={setTodoList} />
-      <hr />
-      <TodoInput todoList={todoList} setTodoList={setTodoList} />
-    </>
-  );
-}
-
-function TodoInput({ todoList, setTodoList }) {
+const App = () => {
   const [inputValue, setInputValue] = useState('');
+  const navigate = useNavigate();
 
-  return (
-    <>
-      <h2>Add To Do</h2>
-      <input
-        value={inputValue}
-        onChange={(evnet) => setInputValue(evnet.target.value)}
-      />
-      <button
-        onClick={() => {
-          const newTodo = { id: Number(new Date()), content: inputValue };
-
-          const newTodoList = [...todoList, newTodo];
-          setTodoList(newTodoList);
-          setInputValue('');
-        }}
-      >
-        추가하기
-      </button>
-    </>
-  );
-}
-
-function TodoList({ todoList, setTodoList }) {
-  return (
-    <ul>
-      {todoList.map((todo) => (
-        <Todo key={todo.id} todo={todo} setTodoList={setTodoList} />
-      ))}
-    </ul>
-  );
-}
-
-function Todo({ todo, setTodoList }) {
-  const [inputValue, setInputValue] = useState('');
-  const [isInputShow, setIsInputShow] = useState(false);
-
-  const inputShowHandler = () => {
-    setIsInputShow(!isInputShow);
+  const handleSearch = () => {
+    if (inputValue.trim() !== '') {
+      navigate(`/search?animal=${inputValue}`);
+    }
   };
 
   return (
-    <li>
-      <input type="checkbox" />
-      {todo.content}
-      {!isInputShow && <button onClick={inputShowHandler}>수정하기</button>}
-      {isInputShow && (
-        <div>
+    <>
+      <header className="header">
+        <h1 className="title">동물은 귀엽고 항상 옳다</h1>
+        <div className="search-container">
           <input
+            className="search-input"
             value={inputValue}
-            onChange={(event) => setInputValue(event.target.value)}
+            onChange={(e) => setInputValue(e.target.value)}
+            placeholder="동물을 검색하세요..."
           />
-          <button
-            onClick={() => {
-              setTodoList((prev) =>
-                prev.map((el) =>
-                  el.id === todo.id ? { ...el, content: inputValue } : el
-                )
-              );
-              setInputValue('');
-              setIsInputShow(!isInputShow);
-            }}
-          >
-            수정
+          <button className="search-button" onClick={handleSearch}>
+            Search
           </button>
         </div>
-      )}
-      <button
-        onClick={() => {
-          setTodoList((prev) => {
-            return prev.filter((el) => el.id !== todo.id);
-          });
-        }}
-      >
-        삭제
-      </button>
-    </li>
+      </header>
+      <main className="main-content">
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/detail/:id" element={<Detail />} />
+          <Route path="/search" element={<Search />} />
+        </Routes>
+      </main>
+      <footer className="footer">All rights reserved to MINJAE</footer>
+    </>
   );
-}
+};
 
 export default App;
