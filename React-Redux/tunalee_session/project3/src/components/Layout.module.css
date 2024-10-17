@@ -1,0 +1,10 @@
+.layout__header {
+  background-color: lightblue;
+  padding: 20px;
+}
+
+.layout__ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
