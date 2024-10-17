@@ -11,7 +11,6 @@ const Search = () => {
 
   return (
     <div className="search-container">
-      <h2 className="search-title">검색 결과: "{param}"</h2>
       {filteredData.length > 0 ? (
         <ul className="animal-list">
           {filteredData.map((el) => (
