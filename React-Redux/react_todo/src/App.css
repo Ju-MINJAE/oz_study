@@ -1,4 +1,4 @@
-#root {
+/* #root {
   padding: 12px;
   display: grid;
   gap: 12px;
@@ -58,4 +58,4 @@ li > div:last-child {
 }
 .current {
   background-color: rgb(230, 234, 255);
-}
+} */
