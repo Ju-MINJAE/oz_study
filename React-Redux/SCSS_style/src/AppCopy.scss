@@ -1,0 +1,146 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  grid-template-rows: 80px 40px 1fr;
+  width: 100vw;
+  height: 100vh;
+}
+
+@mixin flex(
+  $direction: row,
+  $align: stretch,
+  $justify: start,
+  $gap: 0,
+  $wrap: nowrap
+) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align;
+  justify-content: $justify;
+  gap: $gap;
+  flex-wrap: $wrap;
+}
+$gap_pd_rd_20: 20px;
+
+header {
+  display: grid;
+  grid-column: 1 / 3;
+  grid-template-columns: auto auto 3fr auto auto auto;
+  justify-items: center;
+  align-items: center;
+  gap: $gap_pd_rd_20;
+  padding: $gap_pd_rd_20;
+
+  form {
+    display: flex;
+    padding: 0 10%;
+    width: 100%;
+
+    button {
+      width: 60px;
+      height: 40px;
+      border-radius: 0 $gap_pd_rd_20 $gap_pd_rd_20 0;
+      border: 1px solid lightgray;
+      background-color: rgb(245, 245, 245);
+      border-left: transparent;
+      display: grid;
+      place-items: center;
+    }
+
+    input {
+      width: 100%;
+      height: 40px;
+      border-radius: $gap_pd_rd_20 0 0 $gap_pd_rd_20;
+      padding-left: $gap_pd_rd_20;
+      border: 1px solid lightgray;
+      font-size: 1.1rem;
+      color: lightgray;
+      font-weight: 200;
+    }
+  }
+}
+
+nav {
+  grid-row: 2 / 4;
+  width: 80px;
+
+  ul {
+    list-style-type: none;
+    @include flex(column, _, _, 30px, _);
+
+    li {
+      @include flex(column, center, _, _, _);
+      font-size: 0.6rem;
+    }
+  }
+}
+
+#tab {
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: $gap_pd_rd_20;
+  padding-right: $gap_pd_rd_20;
+
+  ul {
+    list-style: none;
+    @include flex(_, _, _, 10px, _);
+    overflow: hidden;
+
+    li {
+      background-color: rgb(245, 245, 245);
+      padding: 8px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      white-space: nowrap;
+
+      &:first-child {
+        background-color: black;
+        color: white;
+        padding: 8px;
+        border-radius: 8px;
+      }
+    }
+  }
+}
+
+main {
+  width: 100%;
+  padding: $gap_pd_rd_20;
+  @include flex(_, flex-start, _, _, wrap);
+
+  section {
+    width: 50%;
+    height: auto;
+    padding: 10px;
+
+    & > img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    & > div {
+      @include flex(row, $gap: 10px);
+      padding-top: 10px;
+    }
+
+    div {
+      img {
+        width: 30px;
+        border-radius: 100%;
+      }
+
+      p:first-child {
+        font-weight: 600;
+      }
+      p:last-child {
+        font-size: 0.9rem;
+        color: gray;
+      }
+    }
+  }
+}
