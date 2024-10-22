@@ -89,7 +89,7 @@ nav {
 
   ul {
     list-style: none;
-    @include flex(_, _, _, 10px, _);
+    @include flex($gap: 10px);
     overflow: hidden;
 
     li {
