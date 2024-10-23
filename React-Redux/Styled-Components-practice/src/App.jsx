@@ -18,7 +18,7 @@ const StyledGlobal = createGlobalStyle`
   }
 
   body {
-    background-color: #121212;
+    background-color: #262525;
   }
 `;
 
