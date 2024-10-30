@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { Suspense, lazy, useState } from 'react';
 import { Route, Routes, useNavigate } from 'react-router-dom';
-import Main from './page/Main';
-import Detail from './page/Detail';
-import Search from './page/Search';
 
+const Main = lazy(() => import('./page/Main'));
+const Detail = lazy(() => import('./page/Detail'));
+const Search = lazy(() => import('./page/Search'));
 import './App.css';
 
 const App = () => {
@@ -24,7 +24,10 @@ const App = () => {
           <input
             className="search-input"
             value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
+            onChange={(e) => {
+              setInputValue(e.target.value);
+              navigate(`/search?animals=${e.target.value}`);
+            }}
             placeholder="동물을 검색하세요..."
           />
           <button className="search-button" onClick={handleSearch}>
@@ -33,11 +36,13 @@ const App = () => {
         </div>
       </header>
       <main className="main-content">
-        <Routes>
-          <Route path="/" element={<Main />} />
-          <Route path="/detail/:id" element={<Detail />} />
-          <Route path="/search" element={<Search />} />
-        </Routes>
+        <Suspense fallback={<h1>로딩중...</h1>}>
+          <Routes>
+            <Route path="/" element={<Main />} />
+            <Route path="/detail/:id" element={<Detail />} />
+            <Route path="/search" element={<Search />} />
+          </Routes>
+        </Suspense>
       </main>
       <footer className="footer">All rights reserved to MINJAE</footer>
     </>
