@@ -18,12 +18,12 @@ const Main = () => {
           <div
             key={pokemon.id}
             onClick={() => navigate(`/detail/${pokemon.id}`)}
-            className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105"
+            className="bg-white rounded-lg shadow-md overflow-hidden border-solid border-2 transition-transform duration-300 hover:scale-105"
           >
             <img
               src={pokemon.front}
               alt={`${pokemon.name} front view`}
-              className="w-full h-48 object-contain bg-gray-100"
+              className="w-full h-48 object-contain bg-gray-200"
             />
             <div className="p-4">
               <h2 className="text-xl font-semibold text-gray-800 text-center">

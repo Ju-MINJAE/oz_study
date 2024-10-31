@@ -4,7 +4,5 @@ import { RootState } from './store';
 export const selectPokemonById = (pokemonId: number) =>
   createSelector(
     (state: RootState) => state.pokemon.data,
-    (pokemon) => {
-      return pokemon.find((el) => el.id === pokemonId);
-    }
+    (pokemon) => pokemon.find((el) => el.id === pokemonId)
   );

@@ -12,14 +12,28 @@ export default function Detail() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      <div className="bg-blue-100 rounded-lg shadow-lg overflow-hidden max-w-2xl mx-auto">
+      <div className="bg-blue-50 rounded-lg shadow-lg overflow-hidden max-w-4xl mx-auto">
         <div className="md:flex">
           <div className="md:flex-shrink-0">
-            <img
-              className="h-48 w-full object-cover md:w-48"
-              src={pokemon.front}
-              alt={`${pokemon.name} front view`}
-            />
+            <div className="flex flex-col md:flex-row">
+              <div className="relative group">
+                <img
+                  className="h-48 w-full object-contain md:w-48 bg-gray-100 transition-opacity duration-300 ease-in-out group-hover:opacity-0"
+                  src={pokemon.front}
+                  alt={`${pokemon.name} front view`}
+                />
+                <div className="absolute inset-0 flex items-end justify-center group-hover:opacity-100 transition-opacity duration-300 ease-in-out">
+                  <span className="bg-black bg-opacity-50 text-white px-2 py-1 rounded">
+                    Hover to see back
+                  </span>
+                </div>
+                <img
+                  className="h-48 w-full object-contain md:w-48 bg-gray-100 absolute top-0 left-0 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100"
+                  src={pokemon.back}
+                  alt={`${pokemon.name} back view`}
+                />
+              </div>
+            </div>
           </div>
           <div className="p-8">
             <div className="uppercase tracking-wide text-sm text-indigo-500 font-semibold">
