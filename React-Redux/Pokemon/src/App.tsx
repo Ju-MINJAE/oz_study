@@ -1,13 +1,14 @@
 import { Suspense, lazy, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchMultiplePokemonById } from './RTK/thunk';
-import { Link, Route, Routes } from 'react-router-dom';
+import { Link, Route, Routes, useNavigate } from 'react-router-dom';
 const Main = lazy(() => import('./pages/Main'));
 const Detail = lazy(() => import('./pages/Detail'));
 const Search = lazy(() => import('./pages/Search'));
 const Favorite = lazy(() => import('./pages/Favorite'));
 
 function App() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -22,7 +23,6 @@ function App() {
           <ul className="flex justify-center space-x-4 md:space-x-8">
             {[
               { path: '/', label: 'Main' },
-              { path: '/search', label: 'Search' },
               { path: '/favorite', label: 'Favorites' },
             ].map((item) => (
               <li key={item.path}>
@@ -38,6 +38,16 @@ function App() {
                 </Link>
               </li>
             ))}
+            <div>
+              <input
+                className="px-2 py-[2px] text-gray-700 bg-white border border-gray-300 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-transparent"
+                type="text"
+                onChange={(e) => navigate(`/search?pokemon=${e.target.value}`)}
+              />
+              <button className="px-2 py-[2px] bg-white text-red-600 rounded-r-lg border border-l-0 border-gray-300 hover:bg-red-100 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition-colors duration-200">
+                Search
+              </button>
+            </div>
           </ul>
         </nav>
       </header>
